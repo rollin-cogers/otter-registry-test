@@ -1,8 +1,15 @@
 # Otter Registry Tests
 The following information and framework has been written by Collin Rogers for the purposes of demonstrating a test suite.
 
-## Before running tests
+## Installation
+ - `git clone `
+ - `cd otter-registry-test`
+ - `npm i`
+
+## Running tests
 Since this repo is seperate from the source code from the application, it assumes that the otter registry is running on http://localhost:4000/. To update this, change the environment variable specified in testSetup.js.
+
+To run the tests, run `npm test`
 
 ## Important info
 - tests directory: This is where the specs for the repo are located.
