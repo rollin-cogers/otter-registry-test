@@ -2,7 +2,7 @@
 The following information and framework has been written by Collin Rogers for the purposes of demonstrating a test suite.
 
 ## Installation
- - `git clone `
+ - `git clone https://github.com/rollin-cogers/otter-registry-test.git`
  - `cd otter-registry-test`
  - `npm i`
 
