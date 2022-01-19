@@ -38,8 +38,8 @@ describe('Test Otters Endpoint: ', () => {
         const res = await axios.get("otters")
         for(const otter of res.data.data) {
             expect(typeof otter.attributes.age).toBe("number")
-            expect(otter.attributes.age).toBeGreaterThan(0)
-            expect(otter.attributes.age).toBeLessThan(99)
+            expect(otter.attributes.age).toBeGreaterThanOrEqual(0)
+            expect(otter.attributes.age).toBeLessThanOrEqual(99)
         }
     })
     test('Paging should be working', async () => {
