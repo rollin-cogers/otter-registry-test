@@ -116,10 +116,7 @@ describe('Test Otters Endpoint: ', () => {
             }
         })
         expect(update.status).toBe(200)
-        const lastPage = (await axios.get('otters')).data.links.last
-        const otters = await axios.get(lastPage)
-        const updatedOtter = otters.data.data.find(otter => otter.id = otterToUpdate)
-        expect(updatedOtter.attributes.name).toEqual("New Name")
+        expect(update.data.data.attributes.name).toEqual("New Name")
     })
     test('Should be able DELETE Otters', async () => {
         const res = await axios.post(`otters?token=${process.env.TOKEN}`, {
