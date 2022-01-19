@@ -42,9 +42,17 @@ describe('Test Otters Endpoint: ', () => {
             expect(otter.attributes.age).toBeLessThan(99)
         }
     })
-    xtest('Paging should be working', async () => {
+    test('Paging should be working', async () => {
         expect(true).toBe(true)
-        //TODO: Write test
+        let res = await axios.get("otters?page[size]=3&page[number]=1")
+        expect(res.data.data.length).toBe(3)
+        expect(res.data.links.self).toEqual(`${process.env.BASEURL}otters?page%5Bsize%5D=3`)
+        expect(res.data.links.next).toEqual(`${process.env.BASEURL}otters?page%5Bsize%5D=3&page%5Bnumber%5D=2`)
+        res = await axios.get("otters?page[size]=4&page[number]=2")
+        expect(res.data.data.length).toBe(4)
+        expect(res.data.links.self).toEqual(`${process.env.BASEURL}otters?page%5Bsize%5D=4&page%5Bnumber%5D=2`)
+        expect(res.data.links.next).toEqual(`${process.env.BASEURL}otters?page%5Bsize%5D=4&page%5Bnumber%5D=3`)
+
     })
     test('Should be able to POST Otters with valid body', async () => {
         const res = await axios.post(`otters?token=${process.env.TOKEN}`, {
