@@ -1,0 +1,23 @@
+{
+  "name": "otter-registry-test",
+  "version": "1.0.0",
+  "description": "Test the otter registry service",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Collin Rogers",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^27.4.0",
+    "axios": "^0.25.0",
+    "jest": "^27.4.7"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*spec.[jt]s"
+    ],
+    "testTimeout": 15000,
+    "globalSetup": "./testSetup.js"
+  }
+}
